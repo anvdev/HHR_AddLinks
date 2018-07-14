@@ -7,14 +7,12 @@ def add_links(directory):
         for file in files:
             if file.endswith('txt'):
                 asset_name = file.replace('.txt', '.otl')
-                path = os.path.join(root, asset_name)
-                if os.path.exists(path):
+                if os.path.exists(os.path.join(root, asset_name)):
                     with open(os.path.join(root, file), 'a', encoding='utf8') as f:
                         f.write(f'\n\n[Скачать пример|{asset_name}]')
                     continue
                 asset_name = file.replace('.txt', '.hda')
-                path = os.path.join(root, asset_name)
-                if os.path.exists(path):
+                if os.path.exists(os.path.join(root, asset_name)):
                     with open(os.path.join(root, file), 'a', encoding='utf8') as f:
                         f.write(f'\n\n[Скачать пример|{asset_name}]')
 
